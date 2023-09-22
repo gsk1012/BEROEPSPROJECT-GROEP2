@@ -1,0 +1,30 @@
+.foto-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 45px;
+   
+}
+
+.foto img {
+  width: 200px;
+  height: 200px;
+  border-radius: 7px;
+}
+
+
+.foto-text {
+    text-align: left;
+    margin-top: 5px;
+    
+}
+.foto{
+    background-color: aqua;
+    padding: 10px;
+    border-radius: 7px;
+    
+}
+button{
+    display: flex;
+    margin-top: 10px;
+}
