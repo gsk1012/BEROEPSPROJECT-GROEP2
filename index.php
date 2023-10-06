@@ -1,83 +1,80 @@
-<?php
-include_once('database.php');
-
-$query = $conn->prepare("SELECT * FROM autos");
-$query->execute();
-$media = $query->fetchAll(PDO::FETCH_ASSOC);
-?>
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../beroeps-project2/css/index.css">
     <link rel="stylesheet" href="../beroeps-project2/css/reset.css">
-    <link rel="stylesheet" href="../beroeps-project2/css/hamza-nav-footer.css">
-    <link rel="stylesheet" href="../beroeps-project2/css/marouane-main.css">
-    <title>Document</title>
+    <title>Auto website</title>
 </head>
+
 <body>
-    <nav>
-        <label class="logo">DesignX</label>
-        <ul>
-            <li><a href="">Home</a></li>
-            <li><a href="">About us</a></li>
-            <li><a href="">contact</a></li>
-            <li><a href="">services</a></li>
-            <li><a href="">feedback</a></li>
-        </ul>
-    </nav>
-    <div class="foto-container">
-        <div class="div-1">
-            <div class="foto">
-                <img src="../beroeps-project2/images/corolla.jpg" alt="Foto 1">
-                <div class="foto-text">Merk : Audi <br>  Model : 2020 <br> Prijs : 100.000$ <br> kilometerstand:233000km</div>
-                <button style="background-color:red; padding:7px; cursor:pointer">Meer informatie</button>
+        <div class="navbar">
+            <div class="logo">
+            <a href="index.php"><img style="width: 140px;" src="../beroeps-project2/images/car-logo.png" alt="logo"></a>
             </div>
-            <div class="foto">
-                <img src="../beroeps-project2/images/ford.jpg" alt="Foto 2">
-                <div class="foto-text">Merk : Audi <br>  Model : 2020 <br> Prijs : 100.000$ <br> kilometerstand:233000km</div>
-                <button style="background-color:red; padding:7px; cursor:pointer">Meer informatie</button>
-            </div>
-            <div class="foto">
-                <img src="../beroeps-project2/images/bmw.jpg" alt="Foto 3">
-                <div class="foto-text">Merk : Audi <br>  Model : 2020 <br> Prijs : 100.000$ <br> kilometerstand:233000km</div>
-                <button style="background-color:red; padding:7px; cursor:pointer">Meer informatie</button>
-            </div>
-
-            <div class="foto">
-                <img src="../beroeps-project2/images/volkswagen.jpg" alt="Foto 4">
-                <div class="foto-text">Merk : Audi <br>  Model : 2020 <br> Prijs : 100.000$ <br> kilometerstand:233000km</div>
-                <button style="background-color:red; padding:7px; cursor:pointer">Meer informatie</button>
+            <div class="nav-items">
+                <ul>
+                    <li class="main-li"><span class="li-main">Home</span></li>
+                    <li class="hover"><a href="autos.php">Catalogus</a></li>
+                    <li>Locatie</li>
+                    <li>Contact</li>
+                    <li>Feedback</li>
+                </ul>
             </div>
         </div>
-        <div class="div-2">
-            <div class="foto">
-            <img src="../beroeps-project2/images/mercedes.jpg" alt="Foto 5">
-                <div class="foto-text">Merk : Audi <br>  Model : 2020 <br> Prijs : 100.000$ <br> kilometerstand:233000km</div>
-                <button style="background-color:red; padding:7px; cursor:pointer">Meer informatie</button>
+        <footer>
+            <div class="footer-entire">
+                <div class="left box">
+                    <div class="footer-title">Contact</div>
+                    <div class="mail">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mail" width="24"
+                            height="24" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor" fill="white"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+                            <polyline points="3 7 12 13 21 7"></polyline>
+                        </svg>
+                        <a href="mailto:beroepsproject2@talnet.nl"><span class="mail-text">beroepsproject2@talnet.nl</span></a>
+                    </div>
+                    <div class="phone">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-phone" width="24"
+                            height="24" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor" fill="white"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path
+                                d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2">
+                            </path>
+                        </svg>
+                        <a href="tel:0206538903"><span class="phone-number">020 653 89 03</span></a>
+                    </div>
+                    <div class="location">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-map-pin" width="24"
+                            height="24" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <circle cx="12" cy="11" r="3"></circle>
+                            <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z">
+                            </path>
+                        </svg>
+                        <a href="https://www.google.com/maps/place/MBO+College+Zuidoost+-+ROC+van+Amsterdam/@52.3159227,4.9464103,17z/data=!3m1!4b1!4m5!3m4!1s0x47c60b91697d8729:0xb5cf33c91399403c!8m2!3d52.3159194!4d4.948599"
+                            target="_blank">
+                            <span class="address">Fraijlemaborg 135, 1102 CV Amsterdam</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="left box">
+                    <div class="footer-title">Openingstijden</div>
+                    <div class="hours">
+                            <div>Maandag tot Woensdag: 08:00 - 15:30</div>
+                            <div>Donderdag en Vrijdag: 08:00 - 17:00</div>
+                            <div>Weekend: Gesloten</div>
+                    </div>
+                </div>
             </div>
-            <div class="foto">
-                <img src="../beroeps-project2/images/audi.jpg" alt="Foto 6">
-                <div class="foto-text">Merk : Audi <br>  Model : 2020 <br> Prijs : 100.000$ <br> kilometerstand:233000km</div>
-                <button style="background-color:red; padding:7px; cursor:pointer">Meer informatie</button>
-            </div>
-
-            <div class="foto">
-            <img src="../beroeps-project2/images/volvo.jpg" alt="Foto 7">
-                <div class="foto-text">Merk : Audi <br>  Model : 2020 <br> Prijs : 100.000$ <br> kilometerstand:233000km</div>
-                <button style="background-color:red; padding:7px; cursor:pointer">Meer informatie</button>
-            </div>
-            <div class="foto">
-                <img src="../beroeps-project2/images/nissan.jpg" alt="Foto 8">
-                <div class="foto-text">Merk : Audi <br>  Model : 2020 <br> Prijs : 100.000$ <br> kilometerstand:233000km</div>
-                <button style="background-color:red; padding:7px; cursor:pointer">Meer informatie</button>
-            </div>
-        </div>
-    </div>
-    </div>
-    <footer>
-        <h1>Lorem ipsum dolor sit.</h1>
-    </footer>
+        </footer>
 </body>
+
 </html>
