@@ -1,39 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Winkelmandje</title>
+    <title>Inlogpagina</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Winkelmandje</h1>
-        <div class="cart">
-            <div class="cart-item">
-                <img src="product1.jpg" alt="Product 1">
-                <div class="item-details">
-                    <h2>Product 1</h2>
-                    <p>Prijs: €50.00</p>
-                    <p>Aantal: <input type="number" value="1" min="1"></p>
-                </div>
-                <button class="remove-button">Verwijderen</button>
+        <h2>Inloggen</h2>
+        <form action="login.php" method="post">
+            <div class="form-group">
+                <label for="username">Gebruikersnaam:</label>
+                <input type="text" id="username" name="username" required>
             </div>
-            <div class="cart-item">
-                <img src="product2.jpg" alt="Product 2">
-                <div class="item-details">
-                    <h2>Product 2</h2>
-                    <p>Prijs: €30.00</p>
-                    <p>Aantal: <input type="number" value="2" min="1"></p>
-                </div>
-                <button class="remove-button">Verwijderen</button>
+            <div class="form-group">
+                <label for="password">Wachtwoord:</label>
+                <input type="password" id="password" name="password" required>
             </div>
-        </div>
-        <div class="cart-total">
-            <p>Totaal: <span id="total-price">€110.00</span></p>
-        </div>
-        <button class="checkout-button">Afrekenen</button>
+            <button type="submit">Inloggen</button>
+        </form>
     </div>
-    <script src="script.js"></script>
 </body>
 </html>
