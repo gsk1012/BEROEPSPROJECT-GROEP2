@@ -25,9 +25,9 @@ $result = $conn->query($query);
                 <ul>
                     <li class="hover"><a href="index.php">Home</a></li>
                     <li class="main-li"><span class="li-main">Catalogus</span></li>
-                    <li>Locatie</li>
-                    <li>Contact</li>
-                    <li>Feedback</li>
+                    <li class="hover"><a href="winkelmandje.php">Winkelmandje</a></li>
+                    <li class="hover"><a href="registreren.php">Registreren</a></li>
+                    <li class="hover"><a href="inloggen.php">Inloggen</a></li>
                 </ul>
             </div>
         </div>

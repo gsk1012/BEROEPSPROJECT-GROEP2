@@ -1,3 +1,6 @@
+<?php
+include_once('database.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,8 +8,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../beroeps-project2/css/index.css">
+    <link rel="stylesheet" href="../beroeps-project2/css/registreren.css">
     <link rel="stylesheet" href="../beroeps-project2/css/reset.css">
+    <script src="https://kit.fontawesome.com/a46b3f773e.js" crossorigin="anonymous" defer></script>
     <title>Auto website</title>
 </head>
 
@@ -17,24 +21,59 @@
             </div>
             <div class="nav-items">
                 <ul>
-                    <li class="main-li"><span class="li-main">Home</span></li>
+                <li class="hover"><a href="index.php">Home</a></li>
                     <li class="hover"><a href="autos.php">Catalogus</a></li>
                     <li class="hover"><a href="winkelmandje.php">Winkelmandje</a></li>
-                    <li class="hover"><a href="registreren.php">Registreren</a></li>
+                    <li class="main-li"><span class="li-main">Registreren</span></li>
                     <li class="hover"><a href="inloggen.php">Inloggen</a></li>
                 </ul>
             </div>
         </div>
-        <H1 class="title"> Car zone </H1>
-  <div class="image-container">
+        <div class="container-bg">
+            <h1 style="font-weight: 900;">Registreren</h1>
+            <div class="user-icon">
+                <img src="../hotel_ter_duin/images/user-icon.jpg" alt="">
+            </div>
+            <form action="" method="post">
+                <div class="username">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text" name="username" placeholder="Gebruikersnaam" autocomplete="off" required>
+                </div>
+                <div class="password">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" name="pass" placeholder="Wachtwoord" autocomplete="off" required>
+                </div>
+                <div class="login-btn">
+                    <input style="border: none; font-weight:900;" type="submit" name="submit" value="Registreren">
+                </div>
+            </form>
+            <?php
+            if (isset($_POST['submit'])) {
+                $gebruikersnaam = $_POST['username'];
+                $wachtwoord = $_POST['pass'];
 
-</div>
-<p class="intro">Welkom bij Car zone <br> Waar  Rijplezier en <br> Kwaliteit Samenkomen!</p>
-<h2 class="over">Over ons </h2>
-<p class="text">Bij Car zone draait alles om geweldige auto's en tevreden klanten. Ontdek ons assortiment en beleef de ultieme rijervaring.  Bij 'Car Zone' maken we autorijden speciaal
-    Ons toegewijde team van professionals deelt een diepgaande kennis van de auto-industrie en staat klaar om u te begeleiden bij het vinden van de auto die aan al uw wensen voldoet.Van compacte stadsauto's tot krachtige terreinwagens en
-     luxueuze limousines, ons uitgebreide assortiment biedt voor elk wat wils..</p>
+                $hashedWachtwoord = password_hash($wachtwoord, PASSWORD_DEFAULT);
 
+                $sqlInsert = 'INSERT INTO gebruikers(gebruikersnaam, wachtwoord) VALUES (:gebruikersnaam, :wachtwoord)';
+                $stmt = $conn->prepare($sqlInsert);
+
+                $params = array(
+                    'gebruikersnaam' => $gebruikersnaam,
+                    'wachtwoord' => $hashedWachtwoord,
+                );
+
+                $stmt->execute($params);
+
+                if ($stmt) {
+                    echo "<h1 style='text-align:center;font-size:25px'> Account succesvol aangemaakt</h1>";
+                    echo" <h1 style='text-align:center;font-size:25px;margin-top:1rem; text-decoration:underline;'><a href='inloggen.php'>Log in hier</a></h1>";
+                } else {
+                    echo "<h1 style='text-align:center;font-size:25px'>Error</h1>";
+                }
+            }
+            ?>
+        </div>
+        </main>
         <footer>
             <div class="footer-entire">
                 <div class="left box">
