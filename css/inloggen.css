@@ -10,7 +10,7 @@
 body {
     width: 100%;
     min-height: 100vh;
-    /* background-image: linear-gradient(to right, #434343 0%, black 100%); */
+    background-image: linear-gradient(to right, #434343 0%, black 100%);
     font-family: 'Roboto', sans-serif;
     /* background: #fffbd5;
     background: -webkit-linear-gradient(to right, #b20a2c, #f3a3a3);
@@ -67,57 +67,82 @@ li:hover {
     color: red;
 }
 
-.title{
-    display: flex;
-    margin-left: 15rem;
-    justify-content: start;
+.container-bg {
     color: white;
-    font-size: 100px;
-    color: red;
+    height: 70vh;
+    margin: 5rem 30rem;
+    background: rgb(6,6,6);
+    background: linear-gradient(90deg, rgba(103, 103, 103, 0.258) 31%, rgba(65,65,65,1) 67%);
+    border-radius: 8px;
 }
 
-.image-container {
+.container-bg h1 {
     text-align: center;
+    padding: 2rem;
+    font-size: 40px;
+    width: 100%;
+}
+
+.user-icon {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 img {
-    max-width: 100%;
+    width: 100px;
+    border-radius: 50em;
+    object-fit: fill;
 }
 
-.over{
-    margin-top: 5rem;
-    margin-left: 15rem;
-    color: white;
-    font-size: 50px;
-    color: red;
-}
-
-.intro{
+form {
     display: flex;
-    justify-content: start ;
-    color: white;
-    font-size: 60px;
-    margin-left: 15rem;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 2rem;
 }
 
-.text{
-    display: flex;
-    justify-content: center ;
-    color: rgb(255, 255, 255);
-    font-size: 27px;
-    margin-top: 3rem;
-    margin-left: 15rem;
-    width: 50%;
+i {
+    padding: 16px;
 }
 
-html {
-    background: url("../imagesV2/download.jpg") no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-  }
+.username {
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+}
 
+
+.username, .password {
+    width: 46%;
+    border-radius: 8px;
+    background: rgb(100, 100, 100);
+    border: 4px solid linear-gradient(to right, #0A2335, #2F404E) border-box;
+}
+
+input {
+    padding: 20px;
+    border-left: 3px solid #494949;
+    font-size: 20px;
+}
+
+.login-btn {
+    text-align: center;
+    margin-top: 2rem;
+    padding: 0.3rem;
+    background-color: #09131a;
+    width: 46%;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 19px;
+    transition: 0.3s;
+}
+
+.login-btn:hover {
+    background-color: #09131a9a;
+}
 
 
 footer {
@@ -187,6 +212,13 @@ a {
 
 a {
     text-decoration: none;
+}
+
+.no-acc {
+    margin-top: 1rem;
+    width: 45%;
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 footer .footer-entire .box {
