@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Winkelmandje</title>
+  <style>
+    /* Eenvoudige opmaak voor de items in het winkelmandje */
+    .cart-item {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Winkelmandje</h1>
+  <div>
+    <!-- Hier voegen we items toe aan het winkelmandje -->
+    <div class="cart-item">
+      <span>Product 1 - Prijs: $10</span>
+      <button onclick="addToCart('Product 1', 10)">Toevoegen aan winkelmandje</button>
+    </div>
+    <div class="cart-item">
+      <span>Product 2 - Prijs: $20</span>
+      <button onclick="addToCart('Product 2', 20)">Toevoegen aan winkelmandje</button>
+    </div>
+  </div>
+
+  <h2>Winkelmandje</h2>
+  <ul id="cart">
+    <!-- Hier worden de items in het winkelmandje weergegeven -->
+  </ul>
+  <h3>Totaal: <span id="cart-total">$0</span></h3>
+
+  <script>
+    // JavaScript-code om items aan het winkelmandje toe te voegen en de totaalprijs bij te houden
+    let cart = [];
+    let total = 0;
+
+    function addToCart(item, price) {
+      cart.push({ item, price });
+      total += price;
+      updateCart();
+    }
+
+    function updateCart() {
+      const cartList = document.getElementById('cart');
+      const totalSpan = document.getElementById('cart-total');
+      cartList.innerHTML = '';
+      cart.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = `${item.item} - Prijs: $${item.price}`;
+        cartList.appendChild(li);
+      });
+      totalSpan.textContent = `$${total}`;
+    }
+  </script>
+</body>
+</html>
